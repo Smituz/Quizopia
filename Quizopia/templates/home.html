@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{% block title %} Home {% endblock title %}
+{% load static %}
+{% block head %} <link rel="stylesheet" href="{% static 'main.css' %}"> {% endblock head %}
+{% block body %}
+
+<div class="homepage" style="margin-top:80px;">
+    <div class="homepage-section participate">
+        <h2>Participate in a quiz</h2>
+        <a href="join_quiz"><button class="join-btn">Join a Quiz</button></a>
+    </div>
+    <div class="homepage-section create">
+        <h2>Be a quiz master</h2>
+        <a href="gen_quiz"><button class="create-btn">Create Quiz</button></a>
+    </div>
+</div>
+{% endblock body %}

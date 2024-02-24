@@ -41,4 +41,33 @@ def register(request):
         return redirect("login")
     return render(request, "register.html")
 
+def home(request):
+    username=request.session['username']
+    user_info=User_info.objects.get(username=username)
+    context={
+        'user1' : user_info,
+    }
+    return render(request, "home.html" , context)
 
+def gen_quiz(request):
+    username=request.session['username']
+    user_info=User_info.objects.get(username=username)
+    context={
+        'user1' : user_info,
+    }
+    if request.method=="POST":
+        quiz=Quiz()
+        quiz.quiz_name= request.POST.get('quiz_name')
+        quiz.username=user_info
+        quiz.marks_pr_que=request.POST.get('marks_per_question')
+        quiz.description=request.POST.get('description')
+        quiz.save()
+        print(quiz.quiz_code)
+        return render(request, "quetions.html" ,context)
+    return render(request, "generate_quiz.html" ,context)
+
+def add_que(request):
+    return render(request, "quetions.html")
+
+def join_quiz(request):
+    return render(request, "join_quiz.html")

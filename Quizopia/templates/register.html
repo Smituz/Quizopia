@@ -1,17 +1,29 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizopia - Signup</title>
-    
-    <link rel="stylesheet" href="static/register.css">
+    {% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+
 </head>
 <body>
     <div class="container">
         <h1>Welcome to Quizopia</h1>
         <h2>Create Your Account</h2>
-        <form action="#" method="post">
+        <form action="register" method="post">
+            {% csrf_token %}
+            {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-secondary" role="alert" style="color:red">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+            {% endif %}
             <div class="input-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -36,5 +48,7 @@
         </form>
         <p>Already have an account? <a href="login" style="text-decoration: underline; color: rgba(104, 85, 224, 1);;">Login</a> now!</p>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %} {% endblock title %}</title>
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+        {% block head %} {% endblock head %}
+        
+    </head>
+    <body>
+        <nav>
+            <div class="container1">
+                <a href="home" class="brand-logo">Quizopia</a>
+                <div id="links1">
+                    <ul class="nav-links1">
+                        <li><a href="home">Home</a></li>
+                        <li><a href="#">My Quizzes</a></li>
+                        <li><a href="#">{{user1.username}}'s Dashboard</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% block body %} {% endblock body %}
+    </body>
+</html>

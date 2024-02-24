@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{% block title %} Generate Quiz {% endblock title %}
+{% load static %}
+{% block head %} <link rel="stylesheet" href="{% static 'generate_quiz_style.css' %}">
+{% endblock head %}
+{% block body %}
+    <div class="container" style="margin-top:60px;">
+        <h1>Generate Quiz</h1>
+        <form action="gen_quiz" method="post">
+            {% csrf_token %}
+            <div class="input-group">
+                <label for="quiz_name">Quiz Name:</label>
+                <input type="text" id="quiz_name" name="quiz_name" required>
+            </div>
+            <div class="input-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="marks_per_question">Marks per Question:</label>
+                <input type="number" id="marks_per_question" name="marks_per_question" required>
+            </div>
+            <button type="submit">Proceed to Add Questions</button>
+        </form>
+    </div>
+{% endblock body %}

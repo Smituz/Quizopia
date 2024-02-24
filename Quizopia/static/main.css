@@ -1,0 +1,106 @@
+/* Resetting default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: rgba(104, 85, 224, 1);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+margin-left: -137px;
+}
+
+.nav-links1 {
+    list-style: none;
+    display: flex;
+    margin-left: -100px;
+}
+
+.nav-links1 li {
+    margin-right: 20px;
+}
+
+.nav-links1 li:last-child {
+    margin-right: 0;
+}
+
+.nav-links1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links1 a:hover {
+    color: #ccc;
+}
+
+/* Existing CSS for navbar and other styles (as provided in the previous response) */
+
+/* Existing CSS for navbar and other styles (as provided in the previous response) */
+
+.homepage {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.homepage-section {
+    width: 45%;
+    text-align: center;
+}
+
+.participate {
+    padding: 212px;
+    background-color: #89ABE3;
+    color: #fff;
+}
+
+.create {
+    padding: 212px;
+    background-color: #EA738D;
+    color: #fff;
+}
+
+.homepage-section h2 {
+    margin-bottom: 20px;
+}
+
+.join-btn,
+.create-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.join-btn:hover{
+    background-color: rgb(195, 222, 223);
+}
+.create-btn:hover{
+    background-color: rgb(220, 224, 181);
+}
+
