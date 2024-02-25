@@ -19,3 +19,8 @@ Our Key Features
 We are happy to hear your recommendations
 
 Got ideas to make Quizopia even more awesome? We'd love to hear from you! Feel free to submit pull requests or open issues on our [GitHub repository](https://github.com/Quizopia/Quizopia).
+
+run project
+admin user(django) login:
+username:admin
+password:admin
