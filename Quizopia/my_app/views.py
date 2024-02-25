@@ -208,3 +208,13 @@ def dashboard(request):
     # Render the dashboard template with the data
     return render(request, 'dashboard.html', context)
 
+def my_quiz(request):
+    username = request.session['username']
+    user_info = User_info.objects.get(username=username)
+    quiz=Quiz.objects.filter(username=user_info)
+    context={
+        'quiz':quiz,
+        'user1' : user_info,
+    }
+    return render(request,"my_quiz.html",context)
+
