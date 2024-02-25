@@ -10,8 +10,6 @@ Our Key Features
 
 🧠 Create Your Own Quiz: Are you bursting with trivia knowledge? Create your own quiz on any topic under the sun and challenge your friends to test their wits!
 
-⏱️ Time-limited Quizzes: Feel the adrenaline rush as you race against the clock to answer questions before time runs out. Will you emerge as the ultimate quiz champion?
-
 📈 Track Your Progress: Keep track of your quiz scores and see how you stack up against others on our dynamic leaderboard. Can you climb to the top?
 
 🎮 Interactive User Dashboard: Dive into your personalized dashboard, where you'll find past quiz results, achievements, and a treasure trove of quizzes waiting to be conquered.

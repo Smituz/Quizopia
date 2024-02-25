@@ -78,6 +78,7 @@ def add_que(request):
     print(quiz)
     context={
         'user1' : user_info,
+        'quiz1' :quiz
     }
     if request.method=="POST":
         question=Quetions()
@@ -137,30 +138,28 @@ def play(request):
 
 def calculate_score(request):
     if request.method == 'POST':
-        # Fetch user info and quiz details
+     
         username = request.session['username']
         user_info = User_info.objects.get(username=username)
         quiz_code = request.session['quiz_code']
         quiz = Quiz.objects.get(quiz_code=quiz_code)
         questions = Quetions.objects.filter(quiz=quiz)
 
-        # Create a dictionary of correct answers for the quiz {question_id: correct_answer}
+        
         correct_answers = {str(question.id): question.ans for question in questions}
 
-        # Retrieve submitted answers from the POST data
+     
         submitted_answers = {}
         for key, value in request.POST.items():
             if key.startswith('answer'):
                 question_id = key.replace('answer', '')
                 submitted_answers[question_id] = value
 
-        # Debugging output
+    
         print("Correct Answers:", correct_answers)
         print("Submitted Answers:", submitted_answers)
 
-        # Calculate the score
-        # score = sum(1 for question_id, submitted_answer in submitted_answers.items() if submitted_answers.get(submitted_answer) == correct_answers.get(question_id, None))
-        # Sample dictionaries
+       
         score = 0
         for i in submitted_answers:
             for j in correct_answers:
@@ -168,7 +167,6 @@ def calculate_score(request):
                     score+=quiz.marks_pr_que
         
         
-        # Optionally, save the user's score or any other relevant data
         participant=Participants()
         participant.username=user_info
         participant.quiz=quiz
@@ -217,4 +215,6 @@ def my_quiz(request):
         'user1' : user_info,
     }
     return render(request,"my_quiz.html",context)
+def logout(request):
+    return render(request,"login.html")
 
