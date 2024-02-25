@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{% block title %} Generate Quiz {% endblock title %}
+{% load static %}
+{% block head %} <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    {% endblock head %}
+        {% block body %}
+        <div class="container">
+            <h1 class="text-center mb-4">Dashboard</h1>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <ul class="list-group">
+                        <!-- Iterate over quiz scores and display them -->
+                        {% for quiz_name, score in quiz_scores %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ quiz_name }}
+                            <span class="badge badge-primary badge-pill">{{ score }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            </div>
+    {% endblock body %}

@@ -17,9 +17,16 @@
           <div class="card-body">
             <form id="joinForm" action="join_quiz" method="post">
                 {% csrf_token %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-secondary" role="alert" style="color:red" >
+                    {{ message }}
+                </div>
+                {% endfor %}
+        {% endif %}
               <div class="form-group">
                 <label for="quizCode">Quiz Code</label>
-                <input type="text" class="form-control" id="quizCode" name = "code" required>
+                <input type="text" class="form-control" id="quizCode" name = "quiz_code" required>
               </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-primary">Join Quiz</button>

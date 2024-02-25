@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+{% block title %}Questions{% endblock title %}
+{% load static %}
+{% block head %} <link rel="stylesheet" href="{% static 'add_style.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+{% endblock head %}
+{% block body %}
+<form action="add_que" method="post">
+    {%csrf_token%}
+<div class="container">
+    <h2>Question</h2>
+   
+    <textarea id="questionText" placeholder="Enter your question" name="que">
+        </textarea>
+    <br/>
+    <br/>
+
+    <h2>Options:</h2>
+    <br/>
+    <input type="text" id="option1" placeholder="Option 1" name="op1">
+  <br/>
+  <br/>
+    <input type="text" id="option2" placeholder="Option 2" name="op2">
+    <br/>
+    <br/>
+    <input type="text" id="option3" placeholder="Option 3" name="op3">
+    <br/>
+    <br/>
+    <input type="text" id="option4" placeholder="Option 4" name="op4">
+    <br/>
+    <br/>
+    <input type="text" id="answer" placeholder="Correct Answer" name="ans">
+    <br/>
+    <br/>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Add Question</button>
+      </div>
+    <hr>
+</form>
+
+    <div id="question"></div>
+    <div id="options"></div>
+</div>
+ {% endblock body %}

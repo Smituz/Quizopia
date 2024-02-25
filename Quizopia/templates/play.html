@@ -1,0 +1,53 @@
+
+
+{% load static %}
+{% block head %} <link rel="stylesheet" href="{% static 'question_style.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+{% endblock head %}
+{% block body %}
+    <div class="quiz-container" id="quiz">
+        <form action="calculate_score" method="post">
+            {%csrf_token%}
+        <div class="quiz-header">
+            <h2 class="header-txt">{{quiz1.quiz_name}}</h2>
+        </div>
+        {% for i in q1 %}
+        
+        <div class="quiz-body">
+           
+            <h2 id="question">{{i.que}}</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer{{i}}" id="a" class="answer" value="{{i.op1}}"/>
+                    <label for="a" id="a_text">{{i.op1}}</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer{{i}}" id="b" class="answer" value="{{i.op2}}"/>
+                    <label for="b" id="b_text">{{i.op2}}</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer{{i}}" id="c" class="answer" value="{{i.op3}}"/>
+                    <label for="c" id="c_text">{{i.op3}}</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer{{i}}" id="d" class="answer" value="{{i.op4}}"/>
+                    <label for="d" id="d_text">{{i.op4}}</label>
+                </li>
+
+            </ul>
+
+            
+        </div>
+    
+        {%endfor%}
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+        
+
+    </div>
+    {% endblock body %}
+
+

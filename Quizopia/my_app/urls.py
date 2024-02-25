@@ -10,4 +10,8 @@ urlpatterns = [
     path('gen_quiz',views.gen_quiz,name='gen_quiz'),
     path('add_que',views.add_que,name='add_que'),
     path('join_quiz',views.join_quiz,name='join_quiz'),
+    path('play',views.play,name='play'),
+    path('add_que',views.add_que,name='add_que'),
+    path('calculate_score',views.calculate_score,name='calculate_score'),
+    path('dashboard',views.dashboard,name='dashboard'),
 ]
